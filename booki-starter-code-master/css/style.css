@@ -10,10 +10,6 @@
     --filter-bg-color: #DEEBFF;
 }
 
-.fa-solid {
-    color: var(--main-color);
-}
-
 
 
 
@@ -42,30 +38,16 @@ nav ul.menu li a {
     text-decoration: none;
     color: #333; /* Couleur du texte du menu */
     position: relative;
-    transition: color 0.3s; /* Animation de transition de la couleur */
 }
 
 nav ul.menu li a:hover {
     color: #007bff; /* Couleur au survol */
+    border-top-style: solid; /* Barre au survol */
+   
 }
 
 
-nav ul.menu li a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px; /* Hauteur de la bordure */
-    background-color: #007bff; /* Couleur de la bordure */
-    top: 0;
-    left: 0;
-    transform: scaleX(0); /* Réduit la largeur de la bordure à zéro */
-    transform-origin: left;
-    transition: transform 0.3s; /* Animation de transition pour la bordure */
-}
 
-nav ul.menu li a:hover::before {
-    transform: scaleX(1); /* Étend la barre bleue à 100% de la largeur au survol */
-}
 
 /* Styles pour la barre de recherche */
 .search-bar {
@@ -98,7 +80,7 @@ nav ul.menu li a:hover::before {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+    border-radius: 5px 10px 10px 5px; /* Coins arrondis à droite */
     cursor: pointer;
     height: 36px; /* Ajustement de la hauteur */
 }
@@ -111,7 +93,7 @@ nav ul.menu li a:hover::before {
 /* Styles pour la barre de filtre */
 .filter-bar {
     display: flex;
-    align-items:flex-start;
+    align-items:center;
     margin: 20px 0;
     gap: 10px;
 }
@@ -119,23 +101,23 @@ nav ul.menu li a:hover::before {
 .filter-option {
     display: flex;
     border-style: solid;
-    border-color: lightgrey;
+    border-color: #F2F2F2;
     padding: 5px 8px;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    font-weight:bold;
 }
 
 .filter-option:hover {
-    background-color: #007bff; /* Couleur bleu-gris au survol */
-    color: #fff;
+    background-color: #DEEBFF; /* Couleur bleu-gris au survol */
 }
 
 .filter-icon {
     margin-right: 5px;
+    color: #0065FC;
 }
 
-/* Stylez les icônes ici */
+/* Style des icônes */
 .filter-icon i {
     font-size: 16px;
 }
@@ -145,16 +127,20 @@ nav ul.menu li a:hover::before {
     margin-left: 5px; /* Espace entre l'icône et le texte */
 }
 
+/*Style texte d'info */
+
+.texte-information i {
+    color: #0065FC;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #f2f2f2;
+}
+
 .main-container {
     width: 100%;
     max-width: 1440px;
     padding: 0 50px;
     box-sizing: border-box;
-}
-
-
-.header-container {
-    display: flexbox;
 }
 
 a {
@@ -211,12 +197,14 @@ a {
 
 .hebergement-title {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
 .hebergement-cards .card {
     display: flex;
+    flex-direction: column;
     margin-top: 33px;
 }
 
