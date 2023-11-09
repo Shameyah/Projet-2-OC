@@ -10,139 +10,6 @@
     --filter-bg-color: #DEEBFF;
 }
 
-
-
-
-header {
-    background-color: #fff; /* Couleur de fond de l'en-tête */
-    display: flex;
-    justify-content: space-between; /* Place le logo à gauche et le menu à droite */
-    align-items: center;
-    padding: 20px;
-}
-
-.logo img {
-    max-height: 20px; /* Ajustez la taille du logo selon vos besoins */
-}
-
-nav ul.menu {
-    list-style: none;
-    display: flex; /* Affiche les éléments du menu sur la même ligne */
-}
-
-nav ul.menu li {
-    margin-right: 20px; /* Espacement entre les éléments du menu */
-}
-
-nav ul.menu li a {
-    text-decoration: none;
-    color: #333; /* Couleur du texte du menu */
-    position: relative;
-}
-
-nav ul.menu li a:hover {
-    color: #007bff; /* Couleur au survol */
-    border-top-style: solid; /* Barre au survol */
-   
-}
-
-
-
-
-/* Styles pour la barre de recherche */
-.search-bar {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    border-radius: 5px;
-
-}
-
-.search-icon {
-    background-color: #f2f2f2; /* Fond noir pour l'icône de localisation */
-    padding: 10px;
-    border-radius: 5px 0 0 5px; /* Coins arrondis à gauche */
-}
-
-
-.search-input {
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 0;
-    outline: none;
-    height: 36px; /* Ajustement de la hauteur */
-}
-
-.search-button {
-    background-color: #007bff; /* Fond bleu pour le bouton "Rechercher" */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px 10px 10px 5px; /* Coins arrondis à droite */
-    cursor: pointer;
-    height: 36px; /* Ajustement de la hauteur */
-}
-
-/* Style pour le bouton "Rechercher" au survol */
-.search-button:hover {
-    background-color: #0056b3; /* Fond bleu plus sombre au survol */
-}
-
-/* Styles pour la barre de filtre */
-.filter-bar {
-    display: flex;
-    align-items:center;
-    margin: 20px 0;
-    gap: 10px;
-}
-
-.filter-option {
-    display: flex;
-    border-style: solid;
-    border-color: #F2F2F2;
-    padding: 5px 8px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight:bold;
-}
-
-.filter-option:hover {
-    background-color: #DEEBFF; /* Couleur bleu-gris au survol */
-}
-
-.filter-icon {
-    margin-right: 5px;
-    color: #0065FC;
-}
-
-/* Style des icônes */
-.filter-icon i {
-    font-size: 16px;
-}
-
-.filter-label {
-    font-size: 16px;
-    margin-left: 5px; /* Espace entre l'icône et le texte */
-}
-
-/*Style texte d'info */
-
-.texte-information i {
-    color: #0065FC;
-    border-style: solid;
-    border-radius: 15px;
-    border-color: #f2f2f2;
-}
-
-.main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
-    box-sizing: border-box;
-}
-
 a {
     color: inherit;
     text-decoration: none;
@@ -175,6 +42,159 @@ a {
 .neutral-star {
     color: var(--main-bg-color)
 }
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+
+                                                    /********BODY***********/
+
+/* Header*/
+
+header {
+    display: flex;
+    justify-content: space-between; /* Place le logo à gauche et le menu à droite */
+    padding: 20px;
+}
+
+.logo img {
+    max-height: 20px;
+}
+
+nav menu {
+    display: flex; /* Affiche les éléments du menu sur la même ligne */
+    padding: 0px 50px 0px 50px;
+    gap: 68px;
+}
+
+
+nav a {
+    color:  #000000; /* Couleur du texte du menu */
+    padding-top: 14px;
+    margin-top: 68px;
+    margin-left: 15px;
+    font-family: Raleway;
+    size: 16px;
+    line-height: 18.78px;
+    align-items: center;
+    font-weight: 400;
+}
+
+nav a:hover {
+    color: #0065FC; /* Couleur au survol */
+    border-top: 2px solid; /* Barre au survol */
+   
+}
+
+/* Styles pour la barre de recherche */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 15px;
+    width: 377px;
+    height: 49px;
+
+}
+
+.search-icon {
+    background-color: #f2f2f2; /* Fond noir pour l'icône de localisation */
+    padding: 10px;
+    border-radius: 15px 0 0 15px; /* Coins arrondis à gauche */
+    border: 1px ;
+}
+
+
+.search-input {
+    padding: 0 10px;
+    font-size: 16px;
+    height: 36px; /* Ajustement de la hauteur */
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    align-items: center;
+    size: 18px;
+    line-height: 21.13px;
+
+}
+
+::placeholder {
+    color: #000;
+    opacity: 1; /* Firefox */
+}
+
+.search-button {
+    background-color: #0065FC; /* Fond bleu pour le bouton "Rechercher" */
+    color: #fff;
+    border: 1px;
+    padding: 15px 16px 15px 16px;
+    border-radius: 0px 15px 15px 0px; /* Coins arrondis */
+    cursor: pointer;
+    font-weight: 700;
+    height: 36px; /* Ajustement de la hauteur */
+
+}
+
+/* Style pour le bouton "Rechercher" au survol */
+.search-button:hover {
+    background-color: #0056b3; /* Fond bleu plus sombre au survol */
+}
+
+/* Styles pour la barre de filtre */
+.filter-bar {
+    display: flex;
+    align-items:center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.filter-option {
+    display: flex;
+    border: 2px solid;
+    border-color: #D9D9D9;
+    padding: 4px 19px 4px 19px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight:bold;
+    gap: 10px;
+    size: 17px;
+    line-height: 19.96px;
+}
+
+.filter-option:hover {
+    background-color: #DEEBFF; /* Couleur bleu-gris au survol */
+}
+
+.filter-icon {
+    margin-right: 5px;
+    color: #0065FC;
+}
+
+/* Style des icônes */
+.filter-icon i {
+    font-size: 16px;
+}
+
+.filter-label {
+    font-size: 16px;
+    margin-left: 5px; /* Espace entre l'icône et le texte */
+}
+
+/*Style texte d'info */
+
+.texte-information i {
+    color: #0065FC;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #f2f2f2;
+}
+
+
+
+
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
