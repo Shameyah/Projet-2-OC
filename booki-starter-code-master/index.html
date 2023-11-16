@@ -15,53 +15,50 @@
 <body>
     <div class="main-container">
         <header>
-            <div class="logo">
-                <img src="images/logo/Booki.png" alt="logo du site">
-            </div>
             <nav class="menu">
-                <a href="#">Hébergement</a>
-                <a href="#">Activités</a>
+                <a href="#" id="logo"><img src="images/logo/Booki.png" alt="logo du site"></a>
+                <a href="#lien-hebergement" class="btn-menu">Hébergement</a>
+                <a href="#lien-activites" class="btn-menu">Activités</a>
             </nav>
         </header>
-        <div class="info-group"> 
-            <section class="headline">
-                <h2>Trouver votre hébérgement pour des vacances de reves</h2>
-                <p>En plein centre-ville ou plein nature</p>
-                <div class="search-bar">
-                    <div class="search-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <input type="text" placeholder="Marseille, France" class="search-input">
-                    <button class="search-button">Rechercher</button>
-                </div>
-                <div class="filter-bar">
-                    <div>
-                        <b>Filtres</b>
-                    </div>
-                    <div class="filter-option">
-                        <span class="filter-icon"><i class="fa-solid fa-money-bill-wave"></i></span>
-                        <span class="filter-label">Économique</span>
-                    </div>
-                    <div class="filter-option">
-                        <span class="filter-icon"><i class="fa-solid fa-female"></i></span>
-                        <span class="filter-label">Familial</span>
-                    </div>
-                    <div class="filter-option">
-                        <span class="filter-icon"><i class="fa-solid fa-heart"></i></span>
-                        <span class="filter-label">Romantique</span>
-                    </div>
-                    <div class="filter-option">
-                        <span class="filter-icon"><i class="fa-solid fa-fire"></i></span>
-                        <span class="filter-label">Nos pépites</span>
-                    </div>
-                </div>
-                <div class="texte-information">
-                    <p><i class="fa-solid fa-circle-info"></i>
-                   Plus de 500 logements sont disponibles dans cette ville</p>
-                </div>  
-            </section>
-        </div>
+
         <main>
+            <form action="#">
+                <div class="headline">
+                    <h2>Trouver votre hébérgement pour des vacances de reves</h2>
+                    <p>En plein centre-ville ou plein nature</p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Marseille, France" class="search-input">
+                    <button class="search-button"><span>Rechercher</span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>               
+                </div>
+            </form>
+
+            <div class="filter-bar">
+                <h3>Filtres</h3>
+                <div class="filter-option">
+                    <span class="filter-icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+                    <span class="filter-label">Économique</span>
+                </div>
+                <div class="filter-option">
+                    <span class="filter-icon"><i class="fa-solid fa-female"></i></span>
+                    <span class="filter-label">Familial</span>
+                </div>
+                <div class="filter-option">
+                    <span class="filter-icon"><i class="fa-solid fa-heart"></i></span>
+                    <span class="filter-label">Romantique</span>
+                </div>
+                <div class="filter-option">
+                    <span class="filter-icon"><i class="fa-solid fa-fire"></i></span>
+                    <span class="filter-label">Nos pépites</span>
+                </div>
+            </div>
+            <div class="texte-information">
+                <i class="fa-solid fa-info"></i>
+                <p> Plus de 500 logements sont disponibles dans cette ville</p>
+            </div>  
+            
             <div class="hebergements-and-populaires">
                 <section class="hebergements">
                     <div class="hebergements-title">
@@ -256,70 +253,63 @@
             </div>
             <div class="activites">
                 <div class="activites-title">
-                    <h2 class="section-title">Activités à Marseille</h2>
+                    <h2>Activités à Marseille</h2>
                 </div>
                 <div class="activites-cards">
                     <a href="#">
-                        <article class="card">
+                        <article class="card-100">
                             <img src="./images/activites/reno-laithienne.jpg" alt="Image de la chambre d'hôtel montrant un lit">
-                            <div class="card-content">
-                                <div class="card-txt">
-                                    <h3 class="card-title">Vieux-Port</h3>
-                                </div>
-                            </div>
+                             <div class="activites-card-txt">
+                                <h3>Vieux-Port</h3>
+                             </div>
                         </article>
                     </a>
                     <a href="#">
-                        <article class="card">
+                        <article class="card-100">
                             <img src="./images/activites/paul-hermann.jpg" alt="Image de la chambre d'hôtel montrant un lit">
-                            <div class="card-content">
-                                <div class="card-txt">
-                                    <h3 class="card-title">Fort de Pomègues</h3>
-                                </div>
+                             <div class="activites-card-txt">
+                                <h3>Fort de Pomègues</h3>
                             </div>
                         </article>
                     </a>
                     <a href="#">
-                        <article class="card">
+                        <article class="card-100">
                             <img src="./images/activites/kilyan-sockalingum.jpg" alt="Image de la chambre d'hôtel montrant un lit">
-                            <div class="card-content">
-                                <div class="card-txt">
-                                    <h3 class="card-title">Parc national des Calanques</h3>
-                                </div>
+                            <div class="activites-card-txt">
+                                <h3>Parc national des Calanques</h3>
                             </div>
                         </article>
                     </a>
                     <a href="#">
-                        <article class="card">
+                        <article class="card-100">
                             <img src="./images/activites/florian-wehde.jpg" alt="Image de la chambre d'hôtel montrant un lit">
-                            <div class="card-content">
-                                <div class="card-txt">
-                                    <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
-                                </div>
+                            <div class="activites-card-txt">
+                                <h3>Notre-Dame-de-la-Garde</h3>
                             </div>
                         </article>
                     </a>
                 </div>
             </div>
         </main>
+
         <footer>
-            <div class="fondgris">
-                <div class="premierbloc">
-                    <h3>A propos</h3>
-                    <div><a href="#">Fonctionnement du site</a></div>
-                    <div><a href="#">Conditions générales</a></div>
-                    <div><a href="#">Données et confidentialité</a></div>
-                </div>
-                <div class="Nos hébérgements">
-                    <h3>A propos</h3>
-                    <div><a href="#">Charte qualité</a></div>
-                    <div><a href="#">Proposer votre hôtel</a></div>
-                </div>
-                <div class="troisiemebloc">
-                    <h3>Assistance</h3>
-                    <div><a href="#">Centre d'aide</a></div>
-                    <div><a href="#">Nous contacter</a></div>
-                </div>
+
+             <div class="footer-left">
+                <h3>A propos</h3>
+                <p><a href="#">Fonctionnement du site</a></p>
+                <p><a href="#">Conditions générales de ventes</a></p>
+                <p><a href="#">Données et confidentialité</a></p>
+            </div>
+            <div class="footer-middle">
+                <h3>Nos hébérgements</h3>
+                <p><a href="#">Charte qualité</a></p>
+                <p><a href="#">Soumettre votre hôtel</a></p>
+
+            </div>
+            <div class="footer-right">
+                <h3>Assistance</h3>
+                <p><a href="#">Centre d'aide</a></p>
+                <p><a href="#">Nous contacter</a></p>
             </div>
         </footer>
     </div>
