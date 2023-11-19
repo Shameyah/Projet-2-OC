@@ -37,7 +37,7 @@ a {
 
 ul {
     list-style: none;
-  }
+}
 
 :focus {
     outline: none;
@@ -46,14 +46,17 @@ ul {
 .fa-solid {
     color: var(--main-color);
 }
+
 .fa-xs {
     line-height: 0;
 }
+
 .section-title {
     font-size: 1.3rem;
 }
 
-.card, .card-100 {
+.card,
+.card-100 {
     display: flex;
     background-color: var(--pure-white);
     border-radius: 20px;
@@ -95,13 +98,15 @@ input {
 
 /****** Hoover & Focus ***********/
 
-.btn-menu:hover, .btn-menu:focus {
+.btn-menu:hover,
+.btn-menu:focus {
     color: var(--main-color);
-    border-top:  0.12rem solid var(--main-color);
+    border-top: 0.12rem solid var(--main-color);
     padding-top: 0.87rem;
 }
 
-.filter-bar-btn:hover, .filter-bar-btn:focus {
+.filter-bar-btn:hover,
+.filter-bar-btn:focus {
     background-color: var(--filter-bg-color);
 }
 
@@ -113,7 +118,7 @@ footer a:hover {
     color: var(--main-color);
 }
 
-                                                   
+
 
 /* Header*/
 
@@ -127,12 +132,12 @@ header img {
     width: 3.81rem;
     height: 1.18rem;
     margin: 1.87rem 3.12rem;
-  }
+}
 
 .menu {
     display: flex;
     gap: 4.25rem;
-    margin: 0  3.12rem;
+    margin: 0 3.12rem;
 
 }
 
@@ -156,6 +161,7 @@ header img {
     display: flex;
     width: 23rem;
 }
+
 .search-bar input {
     text-align: center;
     border-top: 0.12rem solid var(--main-bg-color);
@@ -179,6 +185,7 @@ header img {
     background-color: var(--main-bg-color);
     border-radius: 0.93rem 0 0 0.93rem;
 }
+
 .search-button {
     display: flex;
     align-items: center;
@@ -191,14 +198,17 @@ header img {
 }
 
 .fa-solid.fa-magnifying-glass {
-    display: none;  /* faire disparaitre la loupe */
+    display: none;
+    /* faire disparaitre la loupe */
     color: white;
-} 
+}
 
 
 /* Styles pour la barre de filtre */
 
-.filter-block, .filter-bar, .filter-option {
+.filter-block,
+.filter-bar,
+.filter-option {
     display: flex;
     gap: 0.93rem;
 }
@@ -249,10 +259,10 @@ header img {
     flex-shrink: 0;
     justify-content: center;
     font-size: 0.62rem;
-    height: 1.5rem;   
-    width: 1.5rem;  
+    height: 1.5rem;
+    width: 1.5rem;
     border: 1px solid var(--filter-bg-color);
-    border-radius: 50%;  
+    border-radius: 50%;
 }
 
 
@@ -279,7 +289,7 @@ header img {
 .hebergements {
     width: 65%;
     flex-direction: column;
-    gap: 1.87rem;    
+    gap: 1.87rem;
 }
 
 .hebergements .hebergement-cards {
@@ -298,14 +308,14 @@ header img {
     gap: 0.25rem;
     padding-bottom: 0.93rem;
 }
- 
+
 
 .hebergements img {
     width: 100%;
     height: 7.75rem;
     border: -2.69rem solid var(--pure-white);
     border-radius: 1.25rem 1.25rem 0 0;
-   
+
 }
 
 .hebergements .card-content {
@@ -321,7 +331,14 @@ header img {
     justify-content: space-between;
     height: 0.82rem;
     color: var(--main-color);
-}    
+    margin-top: auto;
+}
+
+.hebergements .card-title {
+    margin-top: 5px;
+    margin-bottom: auto;
+}
+
 
 /****** Populaires ***********/
 .populaires {
@@ -336,39 +353,59 @@ header img {
     align-items: center;
 }
 
-.populaires-cards .card {
-    display: flex;
-    margin-top: 33px;
-}
-
-.populaires-cards img {
-    width: 33%;
-    height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.populaires-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
+.populaires-cards {
     display: flex;
     flex-direction: column;
+    gap: 1.87rem;
+    width: 100%;
+}
+
+.populaires .card {
+    flex-direction: row;
+    width: 100%;
+}
+
+.populaires img {
+    height:
+        /*146px*/
+        9.12rem;
+    width: calc(100% / 3);
+    border: -0.69rem solid white;
+    border-radius: 1.25rem 0 0 1.25rem;
+}
+
+.populaires .card-content {
+    width: calc(2 * 100% / 3);
+    display: flex;
+    flex-direction: column;
+    margin: 0.31rem 0;
+    padding-left: 0.93rem;
+    padding-right: 0.31rem;
+}
+
+.populaires .card-rating {
+    width:
+        /*68px*/
+        4.25rem;
+    height:
+        /*12px*/
+        0.75rem;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
-    margin: 0;
-}
-
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
+    font-size: 0.95em;
+    margin-top: auto;
+    margin-bottom: 0.31rem;
     color: var(--main-color);
+}
+
+.populaires .card-title {
+    margin: auto;
+
+}
+
+.populaires .card-subtitle {
+    margin: auto;
 }
 
 .fa-chart-line {
@@ -409,7 +446,8 @@ header img {
 .activites h3 {
     display: flex;
     align-items: center;
-    height: calc(25rem - 23rem); /*400px - 380px)*/
+    height: calc(25rem - 23rem);
+    /*400px - 380px)*/
     padding: 0 1.18rem;
     font-size: 1rem;
 }
@@ -422,7 +460,7 @@ footer {
     display: flex;
     background-color: var(--main-bg-color);
     margin: 2.18rem 3.12rem 0 3.12rem;
-    
+
 }
 
 footer div {
@@ -435,6 +473,7 @@ footer div {
 
 footer h2 {
     font-size: 1.12rem;
+    margin-bottom: 5px;
 }
 
 
@@ -442,24 +481,24 @@ footer ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
+}
 
 
-  /*=============== SCROLL BAR ===============*/
+/*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
     width: 0.6rem;
     border-radius: 0.3rem;
     background-color: hsl(19, 8%, 75%);
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     border-radius: 0.5rem;
     background-color: hsl(19, 8%, 65%);
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background-color: hsl(214, 49%, 54%);
-  }
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
