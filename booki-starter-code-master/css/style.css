@@ -604,7 +604,7 @@ footer ul {
         padding-bottom: 0.93rem;
         text-align: center;
         padding-top: 0;
-        border-bottom: 0.12rem solid var(--filter-bg-color);
+        border-bottom: 0.12rem solid #F2F2F2;
     }
 
     .btn-menu:hover,
@@ -618,6 +618,13 @@ footer ul {
     .info-filter {
         padding: 0 1.25rem;
 
+    }
+
+
+    /* Info */
+
+    .headline h2 {
+        font-size: 1.2rem;
     }
 
     /* ---- Button search ---- */
@@ -644,20 +651,23 @@ footer ul {
         color: var(--pure-white);
     }
 
+    .fa-solid.fa-magnifying-glass {
+        display: block;
+        color: white;
+        font-size: large;
+        }
+
     /* ---- Filters ---- */  
     .filter-bar {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .filter-option {
-        gap: 0.62rem;
+        /* flex-direction: column; */ 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px;
     }
 
     .filter-bar-btn {
-        width: calc(100% / 2);
+        width: calc(100%/2);
         justify-content: center;
-        padding: 0;
     }
 
     .filter-bar-btn-txt {
