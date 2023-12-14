@@ -135,7 +135,6 @@ header img {
 }
 
 .menu {
-    display: flex;
     gap: 4.25rem;
     margin: 0 3.12rem;
 
@@ -427,6 +426,7 @@ header img {
     height: 23.75rem;
     width: 100%;
     border-radius: 1.25rem 1.25rem 0 0;
+    object-fit: cover;
 }
 
 .activites-cards {
@@ -599,19 +599,26 @@ footer ul {
         width: 50%;
     }
 
+    .menu {
+        border-bottom: 0.12rem solid #F2F2F2;
+        display: flex;
+        gap: 0;
+
+    }
+
+
     .btn-menu {
         width: 100%;
         padding-bottom: 0.93rem;
         text-align: center;
         padding-top: 0;
-        border-bottom: 0.12rem solid #F2F2F2;
     }
 
     .btn-menu:hover,
     .btn-menu:focus {
         padding-top: 0;
         border-top: none;
-        border-bottom: 0.12rem solid var(--main-color);
+        box-shadow: inset 0 -2px 0 var(--main-color);
     }
 
     /* ---- Info & Filters ---- */
@@ -663,15 +670,17 @@ footer ul {
         display: grid; 
         grid-template-columns: 1fr 1fr; 
         gap: 10px;
+        width: 100%;
     }
 
     .filter-bar-btn {
-        width: calc(100%/2);
+        width: 100%;
         justify-content: center;
     }
 
     .filter-bar-btn-txt {
         font-size: 0.87rem;
+        width: 100%;
     }
 
     /* ---- Hébergemrnts ---- */ 
@@ -761,7 +770,6 @@ footer ul {
         flex-direction: column;
         padding: 1.87rem 0 1.87rem 1.87rem;
         margin: 2.18rem 0 0 0;
-        gap: 3.12rem;
     }
 
     footer section {
