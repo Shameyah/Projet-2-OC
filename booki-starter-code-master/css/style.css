@@ -572,14 +572,6 @@ footer ul {
         width: 100%;
     }
 
-    .navbar {
-        margin: 0;
-        gap: 0;
-    }
-
-    .navbar a {
-        width: 50%;
-    }
 
     .menu {
         border-bottom: 2px solid #F2F2F2;
@@ -588,12 +580,12 @@ footer ul {
 
     }
 
-
     nav a {
         width: 100%;
         padding-bottom: 0.93rem;
         text-align: center;
         padding-top: 0;
+        margin-right: 0;
     }
 
     nav a:hover,
