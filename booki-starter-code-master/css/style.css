@@ -98,10 +98,10 @@ input {
 
 /****** Hoover & Focus ***********/
 
-.btn-menu:hover,
-.btn-menu:focus {
+nav a:hover,
+nav a:focus {
     color: var(--main-color);
-    border-top: 0.12rem solid var(--main-color);
+    border-top: 2px solid var(--main-color);
     padding-top: 0.87rem;
 }
 
@@ -125,7 +125,6 @@ footer a:hover {
 header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.87rem 3.12rem;
 }
 
 header img {
@@ -141,9 +140,10 @@ header img {
 }
 
 
-.btn-menu {
+nav a {
     display: inline-block;
     padding-top: 1rem;
+    margin-right: 30px;
 }
 
 
@@ -163,8 +163,8 @@ header img {
 
 .search-bar input {
     text-align: center;
-    border-top: 0.12rem solid var(--main-bg-color);
-    border-bottom: 0.12rem solid var(--main-bg-color);
+    border-top: 2px solid var(--main-bg-color);
+    border-bottom: 2px solid var(--main-bg-color);
 }
 
 ::placeholder {
@@ -232,7 +232,7 @@ header img {
     display: flex;
     align-items: center;
     height: 3.12rem;
-    border: 0.20rem solid var(--main-bg-color);
+    border: 2px solid #D9D9D9;
     border-radius: 1.56rem;
     padding: 0 1.18rem;
 }
@@ -313,7 +313,6 @@ header img {
 .hebergements img {
     width: 100%;
     height: 7.75rem;
-    border: -2.69rem solid var(--pure-white);
     border-radius: 1.25rem 1.25rem 0 0;
 
 }
@@ -370,7 +369,6 @@ header img {
         /*146px*/
         9.12rem;
     width: calc(100% / 3);
-    border: -0.69rem solid white;
     border-radius: 1.25rem 0 0 1.25rem;
 }
 
@@ -485,22 +483,6 @@ footer ul {
 }
 
 
-/*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar {
-    width: 0.6rem;
-    border-radius: 0.3rem;
-    background-color: hsl(19, 8%, 75%);
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 0.5rem;
-    background-color: hsl(19, 8%, 65%);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: hsl(214, 49%, 54%);
-}
-
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
@@ -600,22 +582,22 @@ footer ul {
     }
 
     .menu {
-        border-bottom: 0.12rem solid #F2F2F2;
+        border-bottom: 2px solid #F2F2F2;
         display: flex;
         gap: 0;
 
     }
 
 
-    .btn-menu {
+    nav a {
         width: 100%;
         padding-bottom: 0.93rem;
         text-align: center;
         padding-top: 0;
     }
 
-    .btn-menu:hover,
-    .btn-menu:focus {
+    nav a:hover,
+    nav a:focus {
         padding-top: 0;
         border-top: none;
         box-shadow: inset 0 -2px 0 var(--main-color);
