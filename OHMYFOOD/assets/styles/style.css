@@ -131,13 +131,16 @@
     }
   }
 
-   /** Section pour le contenu principal de la page ***/
+   /** Section pour le footer des pages ***/
   
 footer {
   width: 100%;
   padding: 22px 25px;
   background-color: #404040;
   color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 
 }
 
@@ -148,7 +151,7 @@ footer {
     flex-direction: row-reverse;
     justify-content: flex-start;
     height: 114px;
-    gap: 16px;
+    gap: 10px;
   }
   }
   .footer p {
@@ -574,6 +577,7 @@ footer {
       font-size: 22px;
     }
   }
+  
   .menu-list__heading::after {
     display: block;
     position: absolute;
@@ -591,7 +595,7 @@ footer {
     width: 100%;
     margin: 10px 0px;
     padding: 0;
-    background-color: #ffffff;
+    background-color: red;
     border-radius: 15px;
     box-shadow: 0 4px 10px 0 #d5d5d5;
     overflow: hidden;
