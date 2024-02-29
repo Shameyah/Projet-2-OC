@@ -11,16 +11,18 @@
     <title>Oh My Food</title>
 </head>
 <body>
-    <header>
+        <!-- Header -->
+    <header class="header">
         <h1 class="header__logo">Ohmyfood</h1>
     </header>
+
     <main>
-        <!-- Section pour le contenu principal de la page -->
+        <!-- Section localisation -->
         <div class="btn__location">
             <div class="location__icon">
                 <i class="fa-solid fa-location-dot"></i>
             </div>
-                <form action="" class="location__form" method="post">
+                <form action="suivi.php" class="location__form" method="post">
                     <input type="search" class="city__location">
                     <label class="placeholder">Paris, Belleville</label>
                 </form>
@@ -28,8 +30,7 @@
 
         <!-- Introduction ou section de présentation -->
         <section class="intro">
-            <h2 class="intro__title">Réservez le menu qui
-                vous convient</h2>
+            <h2 class="intro__title">Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
             <button type="submit" class="btn__intro">Explorer nos restaurants</button>
         </section>
@@ -39,22 +40,23 @@
         <section id="fonctionnement">
             <h3 class="fonctionnement__title">Fonctionnement</h3>
             <div class="fonctionnement__list">
+
                 <div class="fonctionnement__step">
-                    <p class="fonctionnement__number">1</p>
-                    <i class="fa-solid fa-mobile-screen-button fonctionnement__icon"></i>
-                    <p class="fonctionnement__subtitle">Choisissez un restaurant</p>
+                    <p class="fonctionnement__step--number">1</p>
+                    <i class="fa-solid fa-mobile-screen-button fonctionnement__step--icon"></i>
+                    <p class="fonctionnement__step--subtitle">Choisissez un restaurant</p>
                 </div>
 
                 <div class="fonctionnement__step">
-                    <p class="fonctionnement__number">2</p>
-                    <i class="fa-solid fa-list-ul"></i>
+                    <p class="fonctionnement__step--number">2</p>
+                    <i class="fa-solid fa-list-ul fonctionnement__step--icon"></i>
                     <p class="fonctionnement__subtitle">Composez votre menu</p>
                 </div>
 
                 <div class="fonctionnement__step">
-                    <p class="fonctionnement__number">3</p>
-                    <i class="fa-solid fa-store"></i>
-                    <p class="fonctionnement__subtitle">Dégustez au restaurant</p>
+                    <p class="fonctionnement__step--number">3</p>
+                    <i class="fa-solid fa-store fonctionnement__step--icon"></i>
+                    <p class="onctionnement__step--subtitle">Dégustez au restaurant</p>
                 </div>
             </div>       
         </section>
@@ -63,17 +65,17 @@
         <section  class="resto">
             <h3 class="resto__title">Restaurants</h3>     
             <div class="resto__block">    
-                <article class="resto__card">
+                <article class="resto__cards">
                     <a href="./restaurants/lapalettedugout.html">
-                        <div class="resto__card--img">
+                        <div class="resto__cards--img">
                             <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                             alt="resto la palette du gout">
-                            <div class="resto__card--markerinfo">
+                            <div class="resto__cards--markerinfo">
                                 <p>Nouveau</p>
                             </div>
                         </div>
-                        <div class="resto__card--content">
-                            <div class="resto__card--txt">
+                        <div class="resto__cards--content">
+                            <div class="resto__cards--txt">
                                 <h4>La palette du goût</h4>
                                 <p>Ménilmontant</p>
                             </div>
@@ -84,17 +86,17 @@
                     </div>
                 </article>
 
-                <article class="resto__card">
+                <article class="resto__cards">
                     <a href="./restaurants/lanoteenchantee.html">
-                        <div class="resto__card--img">
+                        <div class="resto__cards--img">
                             <img src="assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
                             alt="resto la note enchantée">
-                            <div class="resto__card--markerinfo">
+                            <div class="resto__cards--markerinfo">
                                 <p>Nouveau</p>
                             </div>
                         </div>
-                        <div class="resto__card--content">
-                            <div class="resto__card--txt">
+                        <div class="resto__cards--content">
+                            <div class="resto__cards--txt">
                                 <h4>La note enchantée</h4>
                                 <p>Charonne</p>
                             </div>
@@ -105,14 +107,14 @@
                     </div>
                 </article>
 
-                <article class="resto__card">
+                <article class="resto__cards">
                     <a href="./restaurants/alafrancaise.html">
-                        <div class="resto__card--img">
+                        <div class="resto__cards--img">
                             <img src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                             alt="resto à la française">
                         </div>
-                        <div class="resto__card--content">
-                            <div class="resto__card--txt">
+                        <div class="resto__cards--content">
+                            <div class="resto__cards--txt">
                                 <h4>À la française</h4>
                                 <p>Cité Rouge</p>
                             </div>
@@ -123,14 +125,14 @@
                     </div>
                 </article>
 
-                <article class="resto__card">
+                <article class="resto__cards">
                     <a href="./restaurants/ledelicedessens.html">
-                        <div class="resto__card--img">
+                        <div class="resto__cards--img">
                             <img src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                             alt="resto la palette du gout">
                         </div>
-                        <div class="resto__card--content">
-                            <div class="resto__card--txt">
+                        <div class="resto__cards--content">
+                            <div class="resto__cards--txt">
                                 <h4>Le délice des sens</h4>
                                 <p>Folie-Méricourt</p>
                             </div>
@@ -142,6 +144,8 @@
                 </article>
             </div>
         </section>
+
+        <!-- Loading Spinner -->
 
         <div class="loading-spinner-container">
             <div class="loading-spinner"></div>
@@ -158,9 +162,11 @@
 
 
     </main>
-    <footer>
-            <h1 class="footer__logo">Ohmyfood</h1>
+
+        <!-- Footer -->
+    <footer class="footer">
         <div class="footer__block">
+            <h1 class="footer__logo">Ohmyfood</h1>
             <a class="footer__nav" href="#">
                 <i class="fa-solid fa-utensils footer__nav--icons"></i>
                 <p>Proposer un restaurant</p>                

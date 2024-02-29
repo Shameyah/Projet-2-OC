@@ -1,7 +1,11 @@
-footer {
-    display: flex;
-    background-color: #353535;
-   img {
-    color: white;
-   }
-}
+@import 'utility/_variables.scss';
+@import 'utility/_mixins.scss';
+@import 'utility/_animations.scss';
+@import 'base/_boxsizing';
+@import 'base/_typography.scss';
+@import 'components/_buttons.scss';
+@import 'layout/_body.scss';
+@import 'layout/_header.scss';
+@import 'layout/_footer.scss';
+@import 'pages/_index.scss';
+@import 'pages/_menu-pages.scss';

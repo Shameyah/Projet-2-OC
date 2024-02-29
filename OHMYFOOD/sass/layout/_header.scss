@@ -1,0 +1,29 @@
+.header {
+    padding: 2%;
+
+    &__logo {
+        margin: 0;
+        text-align: center;
+        @include cursive__logo;
+    }
+
+    &__row {
+        position: relative;
+    }
+
+    &__goback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 5%;
+        width: 20px;
+        height: 20px;
+        top: 35%;
+        font-size: 20px;
+
+        @include desktop__responsive {
+            font-size: 32px;
+        }
+    }
+}
