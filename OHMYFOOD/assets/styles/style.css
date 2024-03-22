@@ -85,6 +85,49 @@
     transform: translateY(0);
   }
 }
+/* Animation pour le loader spinner */
+@keyframes loading-appear {
+  50% {
+    opacity: 0.95;
+  }
+  99% {
+    z-index: 21;
+  }
+  100% {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+@keyframes move {
+  0%, 5% {
+    left: -32px;
+    width: 16px;
+  }
+  15%, 20% {
+    left: -32px;
+    width: 48px;
+  }
+  30%, 35% {
+    left: 0px;
+    width: 16px;
+  }
+  45%, 50% {
+    left: 0px;
+    width: 48px;
+  }
+  60%, 65% {
+    left: 32px;
+    width: 16px;
+  }
+  75%, 80% {
+    left: 32px;
+    width: 48px;
+  }
+  95%, 100% {
+    left: 64px;
+    width: 16px;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -101,6 +144,30 @@ a {
 /**** font weight ****/
 /**** set-logo ****/
 /**** title d'en tête ****/
+.hero__btngradient {
+  width: 218px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 16px;
+  background: linear-gradient(357deg, #9356DC, #FF79DA);
+  border-radius: 25px;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 4px 10px 0 #d5d5d5;
+  cursor: pointer;
+  margin: 27px 75px 57px 82px;
+  transition: opacity 300ms ease-in-out;
+}
+.hero__btngradient:hover {
+  opacity: 0.88;
+  box-shadow: 0 4px 10px 0 #afafaf;
+}
+.hero__btngradient--long {
+  width: 50%;
+  min-width: 150px;
+  max-width: 250px;
+}
+
 .btn__intro {
   width: 218px;
   height: 50px;
@@ -159,6 +226,47 @@ a {
           background-clip: text;
   transform-origin: bottom;
   -webkit-text-stroke: 1px;
+}
+
+.loading-spinner-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ffffff;
+  opacity: 0.95;
+  animation: loading-appear 4s both ease-in-out;
+  z-index: 21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: -32px;
+  border-radius: 50%;
+  color: #9356DC;
+  background: currentColor;
+  box-shadow: 32px 0, -32px 0, 64px 0;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  background: #FF79DA;
+  animation: move 3s linear infinite alternate;
 }
 
 .body {
@@ -483,9 +591,13 @@ a {
 .resto__cards--info {
   display: flex;
   align-items: flex-start;
+  height: auto;
+  min-height: 75px;
+  padding: 15px;
 }
 .resto__cards--info--txt {
   width: 90%;
+  padding-left: 5px;
 }
 .resto__cards--info h4, .resto__cards--info p {
   margin: 0;
