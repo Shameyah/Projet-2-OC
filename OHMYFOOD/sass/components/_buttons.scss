@@ -26,8 +26,12 @@
 }
 
 .btn__intro{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
     width: 218px;
-    height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: $white;
     font-size: 16px;
     @include gradient;
@@ -42,12 +46,6 @@
     &:hover {
         opacity: 0.88;
         @include object-shadow(darken($shadow, 15%));
-    }
-
-    &--long {
-        width: 50%;
-        min-width: 150px;
-        max-width: 250px;
     }
 
 }
