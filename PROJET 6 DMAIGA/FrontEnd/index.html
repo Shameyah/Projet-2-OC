@@ -70,7 +70,7 @@
 		<!-- Fenêtre modale pour gérer les travaux -->
 		<div id="modal" class="modal-overlay" aria-hidden="true" role="dialog">
 			<div id="modal-content" class="modal-content">
-				<span><i  id="modal-close" class="modal-close fa-solid fa-trash"></i></span>
+				<a id="add-photo-modal-close" href="#" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
 				<h2>Galerie photo</h2>
 
 				<!-- Miniatures des travaux existants -->
@@ -84,11 +84,16 @@
 		<!-- Fenêtre modale pour ajouter des photos -->
 		<div id="add-photo-modal" class="modal-overlay" aria-hidden="true" role="dialog">
 			<div id="add-photo-modal-content" class="modal-content">
-				<span id="add-photo-modal-close" class="modal-close">&times;</span>
-				<h2>Ajouter une photo</h2>
+				<span><i id="modal-close" class="modal-close fa-solid fa-trash"></i></span>
+				<h2>Ajout photo</h2>
 
 				<!-- Formulaire d'ajout de projet -->
 				<form id="add-project-form">
+					<label for="project-image">Image</label>
+					<input type="file" id="project-image" name="image" accept="image/*" required>
+					<p id="image-size">jpg,png : 4mo max</p>
+
+					<input type="submit" value="Ajouter">
 					<label for="project-title">Titre</label>
 					<input type="text" id="project-title" name="title" required>
 
@@ -97,10 +102,7 @@
 						<!-- Options seront ajoutées dynamiquement -->
 					</select>
 
-					<label for="project-image">Image</label>
-					<input type="file" id="project-image" name="image" accept="image/*" required>
-
-					<input type="submit" value="Ajouter">
+					<input type="submit" id="submit-project" value="Valider">
 				</form>
 				<div id="modal-error" class="error-message"></div>
 			</div>
