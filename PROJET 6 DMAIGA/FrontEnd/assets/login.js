@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = loginForm.email.value;
         const password = loginForm.password.value;
 
-        fetch('http://localhost:5678/api/login', {
+        fetch('http://localhost:5678/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -6,77 +6,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Fonction pour ajouter une figure à la galerie
   function addFigureToGallery(work) {
-    const figure = document.createElement('figure');
-    const img = document.createElement('img');
-    const figcaption = document.createElement('figcaption');
+      const figure = document.createElement('figure');
+      const img = document.createElement('img');
+      const figcaption = document.createElement('figcaption');
 
-    img.src = work.imageUrl;
-    img.alt = work.title;
-    figcaption.textContent = work.title;
+      img.src = work.imageUrl;
+      img.alt = work.title;
+      figcaption.textContent = work.title;
 
-    figure.appendChild(img);
-    figure.appendChild(figcaption);
+      figure.appendChild(img);
+      figure.appendChild(figcaption);
 
-    gallery.appendChild(figure);
+      gallery.appendChild(figure);
   }
 
   // Fonction pour afficher les projets filtrés
   function displayFilteredWorks(categoryId) {
-    gallery.innerHTML = ''; // Nettoyer la galerie
-    works.filter(work => categoryId === 'all' || work.categoryId === categoryId)
-      .forEach(work => addFigureToGallery(work));
-    updateActiveFilter(categoryId); // Mettre à jour l'état actif des filtres
+      gallery.innerHTML = ''; // Nettoyer la galerie
+      works.filter(work => categoryId === 'all' || work.categoryId === categoryId)
+          .forEach(work => addFigureToGallery(work));
+      updateActiveFilter(categoryId); // Mettre à jour l'état actif des filtres
   }
 
   // Fonction pour générer les filtres de catégories
   function generateCategoryFilters() {
-    const allFilter = document.createElement('button');
-    allFilter.textContent = 'Tous';
-    allFilter.classList.add('filters-design', 'filter-all');
-    allFilter.addEventListener('click', () => displayFilteredWorks('all'));
-    filtersContainer.appendChild(allFilter);
+      const allFilter = document.createElement('button');
+      allFilter.textContent = 'Tous';
+      allFilter.classList.add('filters-design', 'filter-all');
+      allFilter.addEventListener('click', () => displayFilteredWorks('all'));
+      filtersContainer.appendChild(allFilter);
 
-    categories.forEach(category => {
-      const filter = document.createElement('button');
-      filter.textContent = category.name;
-      filter.classList.add('filters-design');
-      filter.addEventListener('click', () => displayFilteredWorks(category.id));
-      filtersContainer.appendChild(filter);
-    });
+      categories.forEach(category => {
+          const filter = document.createElement('button');
+          filter.textContent = category.name;
+          filter.classList.add('filters-design');
+          filter.addEventListener('click', () => displayFilteredWorks(category.id));
+          filtersContainer.appendChild(filter);
+      });
   }
 
   // Fonction pour mettre à jour l'état actif des filtres
   function updateActiveFilter(categoryId) {
-    const filters = filtersContainer.querySelectorAll('button');
-    filters.forEach(filter => {
-      filter.classList.remove('filter-active');
-      if (filter.textContent === 'Tous' && categoryId === 'all') {
-        filter.classList.add('filter-active');
-      } else if (filter.textContent === categories.find(category => category.id === categoryId)?.name) {
-        filter.classList.add('filter-active');
-      }
-    });
+      const filters = filtersContainer.querySelectorAll('button');
+      filters.forEach(filter => {
+          filter.classList.remove('filter-active');
+          if (filter.textContent === 'Tous' && categoryId === 'all') {
+              filter.classList.add('filter-active');
+          } else if (filter.textContent === categories.find(category => category.id === categoryId)?.name) {
+              filter.classList.add('filter-active');
+          }
+      });
   }
 
   // Récupérer les données des travaux via l'API
   fetch('http://localhost:5678/api/works')
-    .then(response => response.json())
-    .then(data => {
-      works = data; // Stocker les projets
-      displayFilteredWorks('all'); // Afficher tous les projets par défaut
-    })
-    .catch(error => console.error('Erreur lors de la récupération des travaux :', error));
+      .then(response => response.json())
+      .then(data => {
+          works = data; // Stocker les projets
+          displayFilteredWorks('all'); // Afficher tous les projets par défaut
+      })
+      .catch(error => console.error('Erreur lors de la récupération des travaux :', error));
 
   // Récupérer les catégories via l'API
   fetch('http://localhost:5678/api/categories')
-    .then(response => response.json())
-    .then(data => {
-      categories = data; // Stocker les catégories
-      generateCategoryFilters(); // Générer les filtres
-    })
-    .catch(error => console.error('Erreur lors de la récupération des catégories :', error));
+      .then(response => response.json())
+      .then(data => {
+          categories = data; // Stocker les catégories
+          generateCategoryFilters(); // Générer les filtres
+      })
+      .catch(error => console.error('Erreur lors de la récupération des catégories :', error));
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
@@ -93,45 +92,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fonction pour ouvrir la modale de gestion des travaux
   const openModal = () => {
-    modal.style.display = 'flex';
-    fetchProjectsForModal();
-    fetchCategories();
+      modal.style.display = 'flex';
+      fetchProjectsForModal();
+      fetchCategories();
   };
 
   // Fonction pour fermer la modale de gestion des travaux
   const closeModal = () => {
-    modal.style.display = 'none';
+      modal.style.display = 'none';
   };
 
   // Fonction pour ouvrir la modale d'ajout de photos
   const openAddPhotoModal = () => {
-    addPhotoModal.style.display = 'flex';
-    fetchCategories();
+      addPhotoModal.style.display = 'flex';
+      fetchCategories();
   };
 
   // Fonction pour fermer la modale d'ajout de photos
   const closeAddPhotoModal = () => {
-    addPhotoModal.style.display = 'none';
-    modalError.textContent = '';
-    addProjectForm.reset();
+      addPhotoModal.style.display = 'none';
+      modalError.textContent = '';
+      addProjectForm.reset();
   };
 
   // Événement pour fermer la modale en cliquant en dehors du contenu
   window.onclick = (event) => {
-    if (event.target == modal) {
-      closeModal();
-    } else if (event.target == addPhotoModal) {
-      closeAddPhotoModal();
-    }
+      if (event.target == modal) {
+          closeModal();
+      } else if (event.target == addPhotoModal) {
+          closeAddPhotoModal();
+      }
   };
 
   // Événement pour fermer la modale en cliquant sur la croix
   modalClose.onclick = () => {
-    closeModal();
+      closeModal();
   };
 
   addPhotoModalClose.onclick = () => {
-    closeAddPhotoModal();
+      closeAddPhotoModal();
   };
 
   // Événement pour ouvrir la modale de gestion des travaux
@@ -139,113 +138,118 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Événement pour ouvrir la modale d'ajout de photos
   addPhotoButton.onclick = () => {
-    openAddPhotoModal();
+      openAddPhotoModal();
   };
 
   // Fonction pour charger les catégories
   const fetchCategories = async () => {
-    try {
-      const response = await fetch(categoriesUrl);
-      const categories = await response.json();
-      const categorySelect = document.getElementById('project-category');
-      categorySelect.innerHTML = ''; // Réinitialiser les options
-      categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category.id;
-        option.textContent = category.name;
-        categorySelect.appendChild(option);
-      });
-    } catch (error) {
-      console.error('Erreur lors du chargement des catégories:', error);
-    }
+      try {
+          const response = await fetch(categoriesUrl);
+          const categories = await response.json();
+          const categorySelect = document.getElementById('project-category');
+          categorySelect.innerHTML = ''; // Réinitialiser les options
+          categories.forEach(category => {
+              const option = document.createElement('option');
+              option.value = category.id;
+              option.textContent = category.name;
+              categorySelect.appendChild(option);
+          });
+      } catch (error) {
+          console.error('Erreur lors du chargement des catégories:', error);
+      }
   };
 
   // Fonction pour charger les projets existants dans la modale
   const fetchProjectsForModal = async () => {
-    try {
-      const response = await fetch(apiUrl);
-      const projects = await response.json();
-      projectThumbnails.innerHTML = ''; // Réinitialiser les miniatures
-      projects.forEach(project => {
-        addThumbnailToModal(project);
-      });
-    } catch (error) {
-      console.error('Erreur lors du chargement des projets:', error);
-    }
+      try {
+          const response = await fetch(apiUrl);
+          const projects = await response.json();
+          projectThumbnails.innerHTML = ''; // Réinitialiser les miniatures
+          projects.forEach(project => {
+              addThumbnailToModal(project);
+          });
+      } catch (error) {
+          console.error('Erreur lors du chargement des projets:', error);
+      }
   };
 
   // Fonction pour ajouter une miniature à la modale
   const addThumbnailToModal = (project) => {
-    const thumbnail = document.createElement('div');
-    thumbnail.classList.add('thumbnail');
-    thumbnail.innerHTML = `
+      const thumbnail = document.createElement('div');
+      thumbnail.classList.add('thumbnail');
+      thumbnail.innerHTML = `
           <img src="${project.imageUrl}" alt="${project.title}">
-          <button class="delete-button" data-id="${project.id}">&times;</button>
+          <button class="delete-button" data-id="${project.id}">
+              <i class="fa-solid fa-trash"></i>
+          </button>
       `;
-    projectThumbnails.appendChild(thumbnail);
+      projectThumbnails.appendChild(thumbnail);
   };
 
   // Fonction pour ajouter un projet
   addProjectForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const formData = new FormData(addProjectForm);
+      event.preventDefault();
+      const formData = new FormData(addProjectForm);
 
-    try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
-        },
-        body: formData
-      });
+      try {
+          const response = await fetch(apiUrl, {
+              method: 'POST',
+              headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+              },
+              body: formData
+          });
 
-      if (!response.ok) {
-        throw new Error('Erreur lors de l\'ajout du projet');
+          if (!response.ok) {
+              throw new Error('Erreur lors de l\'ajout du projet');
+          }
+
+          const newProject = await response.json();
+          addProjectToDOM(newProject);
+          addThumbnailToModal(newProject);
+          closeAddPhotoModal();
+      } catch (error) {
+          modalError.textContent = error.message;
       }
-
-      const newProject = await response.json();
-      addProjectToDOM(newProject);
-      addThumbnailToModal(newProject);
-      closeAddPhotoModal();
-    } catch (error) {
-      modalError.textContent = error.message;
-    }
   });
 
   // Fonction pour ajouter un projet au DOM
   const addProjectToDOM = (project) => {
-    const projectElement = document.createElement('figure');
-    projectElement.setAttribute('data-id', project.id);
-    projectElement.innerHTML = `
+      const projectElement = document.createElement('figure');
+      projectElement.setAttribute('data-id', project.id);
+      projectElement.innerHTML = `
           <img src="${project.imageUrl}" alt="${project.title}">
           <figcaption>${project.title}</figcaption>
       `;
-    gallery.appendChild(projectElement);
+      gallery.appendChild(projectElement);
   };
 
   // Événement pour supprimer un projet
   projectThumbnails.addEventListener('click', async (event) => {
-    if (event.target.classList.contains('delete-button')) {
-      const projectId = event.target.dataset.id;
+      if (event.target.closest('.delete-button')) {
+          const projectId = event.target.closest('.delete-button').dataset.id;
 
-      try {
-        const response = await fetch(`${apiUrl}/${projectId}`, {
-          method: 'DELETE',
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          try {
+              const response = await fetch(`${apiUrl}/${projectId}`, {
+                  method: 'DELETE',
+                  headers: {
+                      'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+                  }
+              });
+
+              if (!response.ok) {
+                  throw new Error('Erreur lors de la suppression du projet');
+              }
+
+              event.target.closest('.thumbnail').remove();
+              // Supprimer l'élément du DOM principal également
+              const figureElement = document.querySelector(`figure[data-id="${projectId}"]`);
+              if (figureElement) {
+                  figureElement.remove();
+              }
+          } catch (error) {
+              console.error('Erreur lors de la suppression du projet:', error);
           }
-        });
-
-        if (!response.ok) {
-          throw new Error('Erreur lors de la suppression du projet');
-        }
-
-        event.target.closest('.thumbnail').remove();
-        // Supprimer l'élément du DOM principal également
-        document.querySelector(`figure[data-id="${projectId}"]`).remove();
-      } catch (error) {
-        console.error('Erreur lors de la suppression du projet:', error);
       }
-    }
   });
 });
