@@ -5,6 +5,7 @@ let categories = []; // Pour stocker les catégories
 
 // Fonction pour afficher les projet en ajouter un element Figure à la galerie
 function displayWorks(works) {
+    gallery.innerHTML = ''; // Nettoyer la galerie avant d'afficher les projets
     works.forEach(work => {
         console.log('Affichage du projet:', work); // Vérification des données du projet
 
@@ -26,29 +27,44 @@ function displayWorks(works) {
 }
 
 // Fonction pour afficher les projets filtrés
-function  displayFilteresWorks(categoryId) {
-    gallery.innerHTML = ''; //Nettoyer la galerie
-    works.filter(work => categoryId === 'all' || work.categoryId === categoryId)
-        .forEach(work => displayWorks(works));
-
+function  displayFilteredWorks(categoryId) {
+    gallery.innerHTML = ''; // Nettoyer la galerie
+    const filteredWorks = categoryId === 'all' ? works : works.filter(work => work.categoryId === categoryId);
+    displayWorks(filteredWorks);
+    updateActiveFilter(categoryId); // Mettre à jour l'état actif des filtres
 }
 
-//Fonction pour générer les filtres de catégories
+// Fonction pour générer les filtres de catégories
 function generateCategoryFilters() {
     const allFilter = document.createElement('button');
     allFilter.textContent = 'Tous';
     allFilter.classList.add('filters-design', 'filter-all');
-    allFilter.addEventListener('click', () => displayFilteresWorks('all'));
+    allFilter.addEventListener('click', () => displayFilteredWorks('all'));
     filtersContainer.appendChild(allFilter);
 
     categories.forEach(category => {
         const filter = document.createElement('button');
         filter.textContent = category.name;
         filter.classList.add('filters-design');
-        filter.addEventListener('click', () => displayFilteresWorks(category.id));
+        filter.addEventListener('click', () => displayFilteredWorks(category.id));
         filtersContainer.appendChild(filter);
+        
     
     });
+}
+
+// Fonction pour mettre à jour l'etat actif des filtres
+function updateActiveFilter(categoryId) {
+    const filters = filtersContainer.querySelectorAll('button');
+      filters.forEach(filter => {
+          filter.classList.remove('filter-active');
+          if (filter.textContent === 'Tous' && categoryId === 'all') {
+              filter.classList.add('filter-active');
+          } else if (filter.textContent === categories.find(category => category.id === categoryId)?.name) {
+              filter.classList.add('filter-active');
+          }
+      });
+    
 }
 
 // Récupérer les données des travaux via l'API
