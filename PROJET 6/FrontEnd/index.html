@@ -59,6 +59,53 @@
 			<input type="submit" value="Envoyer">
 		</form>
 	</section>
+
+	<!-- Fenêtre modale pour gérer les travaux -->
+	<div id="modal" class="modal-overlay" aria-hidden="true" role="dialog">
+		<div id="modal-content" class="modal-content">
+			<a id="add-photo-modal-close" href="#" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
+			<h3>Galerie photo</h3>
+
+			<!-- Miniatures des travaux existants -->
+			<div id="project-thumbnails" class="thumbnails"></div>
+
+			<!-- Bouton pour ajouter une nouvelle photo -->
+			<button id="add-photo-button">Ajouter une photo</button>
+		</div>
+	</div>
+
+	<!-- Fenêtre modale pour ajouter des photos -->
+	<div id="add-photo-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+		<div id="add-photo-modal-content" class="modal-content">
+			<div>
+				<a id="modal-return" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+				<a id="modal-close" href="#"><i class="modal-close fa-solid fa-xmark"></i></a>
+			</div>
+
+			<!-- Formulaire d'ajout de projet -->
+			<h3>Ajout photo</h3>
+			<form id="add-project-form" method="post" action="#">
+				<div id="project-add-img" class="project-add-img">
+					<i id= "photo-add-icon" class="fa-regular fa-image"></i>
+					<label for="project-image">+ Ajout photo</label>
+					<input type="file" id="project-image" name="image" accept="image/*" required>
+					<p id="image-size">jpg,png : 4mo max</p>
+				</div>
+
+				<label for="project-title">Titre</label>
+				<input type="text" id="project-title" name="title" required>
+
+				<label for="project-category">Catégorie</label>
+				<select id="project-category" name="category" required>
+					<!-- Options seront ajoutées dynamiquement -->
+				</select>
+
+				<input type="submit" id="submit-project" value="Valider">
+			</form>
+			<div id="modal-error" class="error-message"></div>
+		</div>
+	</div>
+
 </main>
 
 <footer>
